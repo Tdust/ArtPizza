@@ -8,6 +8,107 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="iff.edu.br.pooa20162.artpizza.MontaBurguerActivity">
+    tools:context="iff.edu.br.pooa20162.artpizza.MontaBurguerActivity"
+    android:background="@color/fundoBurguer">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="225px"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/framePreco">
+
+        <TextView
+            android:text="Preço atual: "
+            android:layout_gravity="center_vertical"
+
+            android:layout_height="wrap_content"
+            android:id="@+id/txvTitulo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="wrap_content" />
+
+        <TextView
+            android:text="R$ 0,00"
+            android:textAlignment="textEnd"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txvPreco"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:elevation="1dp"
+            android:paddingStart="275dp" />
+
+    </FrameLayout>
+
+    <TextView
+        android:text="Selecione os adicionais:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txvAdicionais"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/framePreco"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:text="Presunto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txvAdicionais"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="13dp"
+        android:id="@+id/cbPresuntoB"
+        style="@style/CustomCheckBox"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <CheckBox
+        android:text="Queijo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cbPresuntoB"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="13dp"
+        android:id="@+id/cbQueijoB"
+        style="@style/CustomCheckBox"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <CheckBox
+        android:text="Ovo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cbQueijoB"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="13dp"
+        android:id="@+id/cbOvoB"
+        style="@style/CustomCheckBox"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <CheckBox
+        android:text="Bacon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cbOvoB"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="13dp"
+        android:id="@+id/cbBaconB"
+        style="@style/CustomCheckBox"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <CheckBox
+        android:text="Frango"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cbBaconB"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="13dp"
+        android:id="@+id/cbFrangoB"
+        style="@style/CustomCheckBox"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
 </RelativeLayout>

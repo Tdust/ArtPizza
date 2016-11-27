@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#777777</color>
-    <color name="colorPrimaryDark">#444444</color>
-    <color name="colorAccent">#3f3</color>
+    <color name="colorPrimary">#cc0000</color>
+    <color name="colorPrimaryDark">#008000</color>
+    <color name="colorAccent">#ffa64d</color>
     <color name="cinzaFundo">#222</color>
     <color name="brancoFonte">#eee</color>
+    <color name="fundoBurguer">#e7ad4c</color>
+
+    <!--CheckBox-->
+    <color name="theFillColorInCheckedState">#E8E88C</color>
+    <color name="theBorderColorInUncheckedState">#005C1A</color>
+    <color name="theBackgroundColorWhenFocusingTheCheckBox">#005C1A</color>
 </resources>
