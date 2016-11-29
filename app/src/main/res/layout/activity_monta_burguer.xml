@@ -111,4 +111,31 @@
         style="@style/CustomCheckBox"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
+    <TextView
+        android:text="Clique em OK para ver o nome do lanche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="6dp"
+        android:id="@+id/tvResultado"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <Button
+        android:text="OK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvResultado"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="54dp"
+        android:id="@+id/btOK" />
+
+    <Button
+        android:text="Limpar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btOK"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/btLimpar" />
+
 </RelativeLayout>
