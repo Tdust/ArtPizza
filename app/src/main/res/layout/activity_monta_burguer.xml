@@ -11,9 +11,9 @@
     tools:context="iff.edu.br.pooa20162.artpizza.MontaBurguerActivity"
     android:background="@color/fundoBurguer">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="225px"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:id="@+id/framePreco">
@@ -21,26 +21,21 @@
         <TextView
             android:text="Preço atual: "
             android:layout_gravity="center_vertical"
-
             android:layout_height="wrap_content"
             android:id="@+id/txvTitulo"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:layout_width="wrap_content" />
+            android:layout_width="250dp" />
 
         <TextView
             android:text="R$ 0,00"
-            android:textAlignment="textEnd"
             android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txvPreco"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:elevation="1dp"
-            android:paddingStart="275dp"
-            android:paddingEnd="0dp"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            />
 
-    </FrameLayout>
-
+    </LinearLayout>
     <TextView
         android:text="Selecione os adicionais:"
         android:layout_width="wrap_content"
