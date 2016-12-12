@@ -92,6 +92,7 @@ public class MontaBurguerActivity extends AppCompatActivity {
 
         final Button bok = (Button)findViewById(R.id.btOK);
         final Button blimpar = (Button)findViewById(R.id.btLimpar);
+        final Button bprox = (Button)findViewById(R.id.btContinuar);
         final TextView tv = (TextView)findViewById(R.id.tvResultado);
         final TextView txvPreco = (TextView)findViewById(R.id.txvPreco);
 
@@ -101,8 +102,21 @@ public class MontaBurguerActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 lanche.setPreco(4);
+                lanche.geraNome();
                 tv.setText(lanche.getNome(), null);
                 txvPreco.setText("R$ "+Float.toString(lanche.getPreco())+"0");
+            }
+        });
+        // passando os valores pra outra tela
+        bprox.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MontaBurguerActivity.this, BurgoumetActivity.class);
+                intent.putExtra("nome",lanche.getNome());
+                intent.putExtra("valor",lanche.getPreco());
+                startActivity(intent);
             }
         });
 

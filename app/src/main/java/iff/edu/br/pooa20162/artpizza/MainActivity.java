@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(MainActivity.this, MontaBurguerActivity.class);
-                //intent.putExtra("nome", etNome.getText().toString());
                 startActivity(intent);
             }
         });

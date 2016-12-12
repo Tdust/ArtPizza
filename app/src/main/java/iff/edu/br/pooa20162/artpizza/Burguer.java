@@ -14,41 +14,6 @@ public class Burguer {
 
     public String getNome()
     {
-        if( isBacon() || isOvo() || isFrango() || isPresunto() || isQueijo() )
-        {
-            nome = "burguer";
-        }
-        if (isBacon())
-        {   nome = "Bacon " + nome;
-            this.preco+=1;
-        }
-        if (isPresunto())
-        {
-            nome = "Presunto " + nome;
-            this.preco+=1;
-        }
-        if (isOvo())
-        {
-            nome = "Eggs " + nome;
-            this.preco+=1;
-        }
-        if (isQueijo())
-        {
-            nome = "X " + nome;
-            this.preco+=1;
-        }
-        if (isFrango())
-        {   nome = "Galis " + nome;
-            this.preco+=0.5;
-        }
-        else if( isBacon() && isOvo() && isPresunto() && isQueijo() )
-        {
-            nome = ("X tudo");
-        }
-        else if ( !isBacon() && !isOvo() && !isPresunto() && !isQueijo() )
-        {
-            nome = "Hamburguer";
-        }
         return this.nome;
     }
     public void setNome(String nome)
@@ -102,6 +67,46 @@ public class Burguer {
     public void setPreco(float preco)
     {
         this.preco = preco;
+    }
+
+    public String geraNome()
+    {
+        if( isBacon() || isOvo() || isFrango() || isPresunto() || isQueijo() )
+        {
+            nome = "burguer";
+        }
+        if (isBacon())
+        {   nome = "Bacon " + nome;
+            this.preco+=1;
+        }
+        if (isPresunto())
+        {
+            nome = "Presunto " + nome;
+            this.preco+=1;
+        }
+        if (isOvo())
+        {
+            nome = "Eggs " + nome;
+            this.preco+=1;
+        }
+        if (isQueijo())
+        {
+            nome = "X " + nome;
+            this.preco+=1;
+        }
+        if (isFrango())
+        {   nome = "Galis " + nome;
+            this.preco+=0.5;
+        }
+        else if( isBacon() && isOvo() && isPresunto() && isQueijo() )
+        {
+            nome = ("X tudo");
+        }
+        else if ( !isBacon() && !isOvo() && !isPresunto() && !isQueijo() )
+        {
+            nome = "Hamburguer";
+        }
+        return this.nome;
     }
 
 

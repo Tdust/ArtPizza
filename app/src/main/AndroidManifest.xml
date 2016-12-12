@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MontaBurguerActivity"></activity>
+        <activity android:name=".MontaBurguerActivity" />
+        <activity android:name=".BurgoumetActivity"></activity>
     </application>
 
 </manifest>

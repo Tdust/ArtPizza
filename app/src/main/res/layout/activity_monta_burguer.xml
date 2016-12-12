@@ -4,10 +4,10 @@
     android:id="@+id/activity_monta_burguer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
     tools:context="iff.edu.br.pooa20162.artpizza.MontaBurguerActivity"
     android:background="@color/fundoBurguer">
 
@@ -36,7 +36,8 @@
             android:id="@+id/txvPreco"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:elevation="1dp"
-            android:paddingStart="275dp" />
+            android:paddingStart="275dp"
+            android:paddingEnd="0dp"/>
 
     </FrameLayout>
 
@@ -137,5 +138,13 @@
         android:layout_alignTop="@+id/btOK"
         android:layout_alignParentEnd="true"
         android:id="@+id/btLimpar" />
+
+    <Button
+        android:text="Continuar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btLimpar"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/btContinuar" />
 
 </RelativeLayout>
