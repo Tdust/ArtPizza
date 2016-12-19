@@ -1,10 +1,7 @@
 package iff.edu.br.pooa20162.artpizza;
-
-import java.lang.reflect.Array;
-
 public class Bandeja {
     int cont = 0;
-    Burguer bandeja[] = new Burguer[10];
+    transient Burguer bandeja[] = new Burguer[10];
 
     public Bandeja()
     {}
@@ -20,6 +17,7 @@ public class Bandeja {
     public void addLanche(Burguer a)
     {
         bandeja[cont]=a;
+        cont++;
     }
     //método colado da net pra ver os paranauês
     public Burguer[] removeLanche(int indice)

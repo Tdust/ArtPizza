@@ -1,7 +1,5 @@
 package iff.edu.br.pooa20162.artpizza;
 
-import android.widget.Toast;
-
 public class Burguer {
 
     String nome = "hamburguer";

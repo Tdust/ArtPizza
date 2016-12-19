@@ -11,11 +11,16 @@ public class BurgoumetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_burgoumet);
+
         //recebendo os valores da outra tela
         Intent intent = getIntent();
+        Bandeja prato = new Bandeja();
         Burguer lanche = new Burguer();
         lanche.setNome((String) intent.getSerializableExtra("nome"));
-        //lanche.setPreco((float) intent.getSerializableExtra("valor"));
+        //prato.setBandeja((Burguer[]) intent.getSerializableExtra("bandejos"));
+        lanche.setPreco((float) intent.getSerializableExtra("preco"));
+
+
 
         final TextView txvNome = (TextView)findViewById(R.id.txvNomeBurguer);
         final TextView txvPreco = (TextView)findViewById(R.id.txvPrecoBurguer);

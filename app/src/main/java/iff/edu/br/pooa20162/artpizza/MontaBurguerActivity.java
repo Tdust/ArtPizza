@@ -1,6 +1,7 @@
 package iff.edu.br.pooa20162.artpizza;
 
 import android.content.Intent;
+import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,6 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.Serializable;
 
 public class MontaBurguerActivity extends AppCompatActivity {
 
@@ -98,6 +98,7 @@ public class MontaBurguerActivity extends AppCompatActivity {
         final Button bprox = (Button)findViewById(R.id.btContinuar);
         final TextView tv = (TextView)findViewById(R.id.tvResultado);
         final TextView txvPreco = (TextView)findViewById(R.id.txvPreco);
+        final Bandeja ban = new Bandeja();
 
         bok.setOnClickListener(new View.OnClickListener()
         {
@@ -118,8 +119,9 @@ public class MontaBurguerActivity extends AppCompatActivity {
             {
                 Intent intent = new Intent(MontaBurguerActivity.this, BurgoumetActivity.class);
                 intent.putExtra("nome", lanche.getNome());
-                //intent.putExtra("valor", lanche.getPreco());
-                lanche.geraNome();
+                ban.addLanche(lanche);
+                //intent.putExtra ("bandejos", ban.bandeja);
+                intent.putExtra("preco", lanche.getPreco());
                 startActivity(intent);
             }
         });
