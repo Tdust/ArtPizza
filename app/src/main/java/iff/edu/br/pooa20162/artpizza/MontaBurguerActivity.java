@@ -1,6 +1,7 @@
 package iff.edu.br.pooa20162.artpizza;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.Serializable;
 
 public class MontaBurguerActivity extends AppCompatActivity {
 
@@ -31,7 +34,7 @@ public class MontaBurguerActivity extends AppCompatActivity {
         else
         {   remover(s, b);                }
     }
-    ////////////////////////////////////////////////////////////////////////////////////
+
 
 
     @Override
@@ -114,8 +117,9 @@ public class MontaBurguerActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 Intent intent = new Intent(MontaBurguerActivity.this, BurgoumetActivity.class);
-                intent.putExtra("nome",lanche.getNome());
-                intent.putExtra("valor",lanche.getPreco());
+                intent.putExtra("nome", lanche.getNome());
+                //intent.putExtra("valor", lanche.getPreco());
+                lanche.geraNome();
                 startActivity(intent);
             }
         });

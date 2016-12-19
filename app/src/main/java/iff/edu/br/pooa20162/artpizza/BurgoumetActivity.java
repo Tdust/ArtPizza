@@ -15,7 +15,7 @@ public class BurgoumetActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Burguer lanche = new Burguer();
         lanche.setNome((String) intent.getSerializableExtra("nome"));
-        lanche.setPreco( (float) intent.getSerializableExtra("preco"));
+        //lanche.setPreco((float) intent.getSerializableExtra("valor"));
 
         final TextView txvNome = (TextView)findViewById(R.id.txvNomeBurguer);
         final TextView txvPreco = (TextView)findViewById(R.id.txvPrecoBurguer);
