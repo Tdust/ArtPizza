@@ -8,7 +8,7 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     android:paddingTop="10dp"
-    tools:context="iff.edu.br.pooa20162.artpizza.MontaBurguerActivity"
+    tools:context="iff.edu.br.pooa20162.artpizza.activity.MontaBurguerActivity"
     android:background="@color/fundoBurguer">
 
     <LinearLayout

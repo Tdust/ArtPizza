@@ -1,9 +1,13 @@
-package iff.edu.br.pooa20162.artpizza;
+package iff.edu.br.pooa20162.artpizza.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import iff.edu.br.pooa20162.artpizza.model.Bandeja;
+import iff.edu.br.pooa20162.artpizza.model.Burguer;
+import iff.edu.br.pooa20162.artpizza.R;
 
 public class BurgoumetActivity extends AppCompatActivity {
 

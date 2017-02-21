@@ -1,4 +1,7 @@
-package iff.edu.br.pooa20162.artpizza;
+package iff.edu.br.pooa20162.artpizza.model;
+
+import iff.edu.br.pooa20162.artpizza.model.Burguer;
+
 public class Bandeja {
     int cont = 0;
     transient Burguer bandeja[] = new Burguer[10];

@@ -1,4 +1,4 @@
-package iff.edu.br.pooa20162.artpizza;
+package iff.edu.br.pooa20162.artpizza.model;
 
 public class Burguer {
 
