@@ -4,13 +4,11 @@
 
     <application
         android:name="com.orm.SugarApp"
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="DATABASE"
             android:value="art.db" />
@@ -32,7 +30,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MontaBurguerActivity" />
-        <activity android:name=".activity.BurgoumetActivity"></activity>
+        <activity android:name=".activity.BurgoumetActivity" />
+        <activity android:name=".activity.MontaPizzaActivity" />
+        <activity android:name=".activity.ListaPizzaActivity" />
+        <activity android:name=".activity.ListaBurguerActivity"></activity>
     </application>
 
 </manifest>
