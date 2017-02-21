@@ -24,5 +24,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button montaPizza = (Button) findViewById(R.id.btMontaPizza);
+        montaPizza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, MontaPizzaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button lista = (Button) findViewById(R.id.button);
+        lista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, ListaPizzaActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -15,11 +15,28 @@
 
     <Button
 
-        android:text="Clica ai"
+        android:text="Hamburguer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="149dp"
         android:id="@+id/btMontaBurguer"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="pizza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:id="@+id/btMontaPizza"
+        android:layout_below="@+id/btMontaBurguer"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Lista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/button" />
 </RelativeLayout>
