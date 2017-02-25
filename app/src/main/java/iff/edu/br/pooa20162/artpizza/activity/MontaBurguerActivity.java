@@ -107,6 +107,7 @@ public class MontaBurguerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
+                lanche.setNome("");
                 lanche.setPreco(4);
                 lanche.geraNome();
                 tv.setText(lanche.getNome(), null);
@@ -135,17 +136,33 @@ public class MontaBurguerActivity extends AppCompatActivity {
             {
                 tv.setText("Clique em OK para ver o nome do lanche", null);
                 lanche.setPreco(4);
+                lanche.setNome("");
                 txvPreco.setText("R$ "+Float.toString(lanche.getPreco())+"0");
                 if(bacon.isChecked())
-                {   bacon.toggle();     }
+                {
+                    bacon.toggle();
+                    lanche.setBacon();
+                }
                 if(queijo.isChecked())
-                {   queijo.toggle();    }
+                {
+                    queijo.toggle();
+                    lanche.setQueijo();
+                }
                 if(presunto.isChecked())
-                {   presunto.toggle();  }
+                {
+                    presunto.toggle();
+                    lanche.setPresunto();
+                }
                 if(ovo.isChecked())
-                {   ovo.toggle();       }
+                {
+                    ovo.toggle();
+                    lanche.setOvo();
+                }
                 if(frango.isChecked())
-                {   frango.toggle();    }
+                {
+                    frango.toggle();
+                    lanche.setFrango();
+                }
             }
         });
     }

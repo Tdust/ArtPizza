@@ -69,10 +69,10 @@ public class Burguer {
 
     public String geraNome()
     {
-        if( isBacon() || isOvo() || isFrango() || isPresunto() || isQueijo() )
+        /*if( isBacon() || isOvo() || isFrango() || isPresunto() || isQueijo() )
         {
             nome = "burguer";
-        }
+        }*/
         if (isBacon())
         {   nome = "Bacon " + nome;
             this.preco+=1;
@@ -96,11 +96,15 @@ public class Burguer {
         {   nome = "Galis " + nome;
             this.preco+=0.5;
         }
+        if (this.getPreco()<5.5 && this.getPreco()>4)
+        {
+            nome = nome + "burguer";
+        }
         else if( isBacon() && isOvo() && isPresunto() && isQueijo() )
         {
             nome = ("X tudo");
         }
-        else if ( !isBacon() && !isOvo() && !isPresunto() && !isQueijo() )
+        if (this.getPreco()<4.5)
         {
             nome = "Hamburguer";
         }
