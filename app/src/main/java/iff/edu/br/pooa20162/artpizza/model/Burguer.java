@@ -1,6 +1,9 @@
 package iff.edu.br.pooa20162.artpizza.model;
 
-public class Burguer {
+import com.orm.SugarRecord;
+
+public class Burguer extends SugarRecord
+{
 
     String nome = "hamburguer";
     boolean frango=false;

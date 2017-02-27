@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import iff.edu.br.pooa20162.artpizza.model.Bandeja;
 import iff.edu.br.pooa20162.artpizza.model.Burguer;
 import iff.edu.br.pooa20162.artpizza.R;
+
+import static java.lang.Float.parseFloat;
 
 
 public class MontaBurguerActivity extends AppCompatActivity {
@@ -120,12 +123,13 @@ public class MontaBurguerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(MontaBurguerActivity.this, BurgoumetActivity.class);
+                Intent intent = new Intent(MontaBurguerActivity.this, ListaBurguerActivity.class);
                 intent.putExtra("nome", lanche.getNome());
                 ban.addLanche(lanche);
                 //intent.putExtra ("bandejos", ban.bandeja);
                 intent.putExtra("preco", lanche.getPreco());
                 startActivity(intent);
+                salvar(lanche);
             }
         });
 
@@ -135,7 +139,7 @@ public class MontaBurguerActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 tv.setText("Clique em OK para ver o nome do lanche", null);
-                lanche.setPreco(4);
+                lanche.setPreco(0);
                 lanche.setNome("");
                 txvPreco.setText("R$ "+Float.toString(lanche.getPreco())+"0");
                 if(bacon.isChecked())
@@ -165,5 +169,10 @@ public class MontaBurguerActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    public void salvar(Burguer a) {
+        Burguer burg = new Burguer (a.isQueijo(), a.isOvo(), a.isPresunto(), a.isBacon(), a.isFrango());
+        burg.geraNome();
+        burg.save();
     }
 }
