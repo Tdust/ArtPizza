@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -34,12 +35,23 @@ public class ListaPizzaActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(ListaPizzaActivity.this,MontaPizzaActivity.class);
 
+                intent.putExtra("id",pizzas.get(i).getId().intValue());
                 intent.putExtra("nome",pizzas.get(i).getNome());
-                intent.putExtra("email",pizzas.get(i).getPreco());
+                intent.putExtra("preco",pizzas.get(i).getPreco());
 
                 startActivity(intent);
-
+            }
+        });
+        Button novaPizza = (Button) findViewById(R.id.btNovaPizza);
+        novaPizza.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(ListaPizzaActivity.this,MontaPizzaActivity.class);
+                intent.putExtra("id",0);
+                startActivity(intent);
             }
         });
     }
-}
+    }

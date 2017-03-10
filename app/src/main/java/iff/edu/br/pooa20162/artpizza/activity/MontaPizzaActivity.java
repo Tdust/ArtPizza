@@ -23,14 +23,18 @@ public class MontaPizzaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monta_pizza);
 
-        btCriar = (Button) findViewById(R.id.btCriar);
-
-
         Intent intent = getIntent();
-        String parametro = (String) intent.getSerializableExtra("nome");
-        TextView nome = (TextView) findViewById(R.id.et1);
-        nome.setText(parametro);
-
+        int id = (int) intent.getSerializableExtra("id");
+        if (id!=0)
+        {
+            String nomep = (String) intent.getSerializableExtra("nome");
+            TextView nome = (TextView) findViewById(R.id.etNomePizza);
+            nome.setText(nomep);
+            float precop = (float) intent.getSerializableExtra("preco");
+            TextView preco = (TextView) findViewById(R.id.etPrecoPizza);
+            preco.setText(Float.toString(precop));
+        }
+        btCriar = (Button) findViewById(R.id.btCriar);
         btCriar.setOnClickListener( new View.OnClickListener(){
 
             @Override
@@ -41,10 +45,10 @@ public class MontaPizzaActivity extends AppCompatActivity {
             }
         });
     }
-    public void salvar() {
+    public void salvar(){
 
-        nome = (EditText) findViewById(R.id.et1);
-        preco = (EditText) findViewById(R.id.et2);
+        nome = (EditText) findViewById(R.id.etNomePizza);
+        preco = (EditText) findViewById(R.id.etPrecoPizza);
 
         Pizza pizza = new Pizza(nome.getText().toString(), parseFloat(preco.getText().toString()));
         pizza.save();

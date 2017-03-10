@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(MainActivity.this, MontaPizzaActivity.class);
+                intent.putExtra("id",0);
                 startActivity(intent);
             }
         });

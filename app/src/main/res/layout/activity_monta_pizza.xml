@@ -23,26 +23,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
         android:ems="10"
-        android:id="@+id/et1"
+        android:id="@+id/etNomePizza"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:ems="10"
-        android:layout_below="@+id/et1"
-        android:layout_alignStart="@+id/et1"
-        android:id="@+id/et2" />
+        android:layout_below="@+id/etNomePizza"
+        android:layout_alignStart="@+id/etNomePizza"
+        android:id="@+id/etPrecoPizza" />
 
     <TextView
         android:text="Preço"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et1"
+        android:layout_below="@+id/etNomePizza"
         android:layout_alignParentStart="true"
         android:id="@+id/textView2"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />

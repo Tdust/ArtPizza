@@ -10,10 +10,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="iff.edu.br.pooa20162.artpizza.activity.ListaPizzaActivity">
 
+    <Button
+        android:text="+"
+        android:id="@+id/btNovaPizza"
+        android:layout_marginTop="420dp"
+        tools:layout_alignParentEnd="false"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="300dp"
+        android:layout_height="37dp"
+        android:layout_width="37dp"/>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/lvPizza" />
+        android:id="@+id/lvPizza"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
