@@ -14,6 +14,7 @@ import iff.edu.br.pooa20162.artpizza.model.Bandeja;
 import iff.edu.br.pooa20162.artpizza.model.Burguer;
 import iff.edu.br.pooa20162.artpizza.R;
 
+import static iff.edu.br.pooa20162.artpizza.R.id.txvPreco;
 import static java.lang.Float.parseFloat;
 
 
@@ -38,6 +39,15 @@ public class MontaBurguerActivity extends AppCompatActivity {
         {   adicionar(s, b);              }
         else
         {   remover(s, b);                }
+
+    }
+    void attDados(Burguer burg, TextView tv, TextView txvPreco)
+    {
+        burg.setNome("");
+        burg.setPreco(4);
+        burg.geraNome();
+        tv.setText(burg.getNome(), null);
+        txvPreco.setText("R$ "+Float.toString(burg.getPreco())+"0");
     }
 
 
@@ -46,6 +56,13 @@ public class MontaBurguerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monta_burguer);
+
+        final Button bok = (Button)findViewById(R.id.btOK);
+        final Button blimpar = (Button)findViewById(R.id.btLimpar);
+        final Button bprox = (Button)findViewById(R.id.btContinuar);
+        final TextView tv = (TextView)findViewById(R.id.tvResultado);
+        final TextView txvPreco = (TextView)findViewById(R.id.txvPreco);
+        final Bandeja ban = new Bandeja();
 
         final Burguer lanche = new Burguer();
 
@@ -63,6 +80,7 @@ public class MontaBurguerActivity extends AppCompatActivity {
             {
                 checarAdicional(bacon, "Bacon", ba);
                 lanche.setBacon();
+                attDados(lanche, tv, txvPreco);
             }
         });
         queijo.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +89,7 @@ public class MontaBurguerActivity extends AppCompatActivity {
             {
                 checarAdicional(queijo,"Queijo", qu);
                 lanche.setQueijo();
+                attDados(lanche, tv, txvPreco);
             }
         });
         presunto.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +98,7 @@ public class MontaBurguerActivity extends AppCompatActivity {
             {
                 checarAdicional(presunto,"Presunto", pr);
                 lanche.setPresunto();
+                attDados(lanche, tv, txvPreco);
             }
         });
         ovo.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +107,7 @@ public class MontaBurguerActivity extends AppCompatActivity {
             {
                 checarAdicional(ovo, "Ovo", eg);
                 lanche.setOvo();
+                attDados(lanche, tv, txvPreco);
             }
         });
         frango.setOnClickListener(new View.OnClickListener() {
@@ -95,15 +116,9 @@ public class MontaBurguerActivity extends AppCompatActivity {
             {
                 checarAdicional(frango,"Frango", fr);
                 lanche.setFrango();
+                attDados(lanche, tv, txvPreco);
             }
         });
-
-        final Button bok = (Button)findViewById(R.id.btOK);
-        final Button blimpar = (Button)findViewById(R.id.btLimpar);
-        final Button bprox = (Button)findViewById(R.id.btContinuar);
-        final TextView tv = (TextView)findViewById(R.id.tvResultado);
-        final TextView txvPreco = (TextView)findViewById(R.id.txvPreco);
-        final Bandeja ban = new Bandeja();
 
         bok.setOnClickListener(new View.OnClickListener()
         {
@@ -123,7 +138,8 @@ public class MontaBurguerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(MontaBurguerActivity.this, ListaBurguerActivity.class);
+                Intent intent = new Intent(MontaBurguerActivity.this, ListaBurguersActivity.class);
+                attDados(lanche, tv, txvPreco);
                 intent.putExtra("nome", lanche.getNome());
                 ban.addLanche(lanche);
                 //intent.putExtra ("bandejos", ban.bandeja);

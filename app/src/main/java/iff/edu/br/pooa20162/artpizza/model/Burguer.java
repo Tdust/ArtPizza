@@ -5,7 +5,7 @@ import com.orm.SugarRecord;
 public class Burguer extends SugarRecord
 {
 
-    String nome = "hamburguer";
+    String nome = "";
     boolean frango=false;
     boolean queijo=false;
     boolean ovo=false;
@@ -72,10 +72,6 @@ public class Burguer extends SugarRecord
 
     public String geraNome()
     {
-        /*if( isBacon() || isOvo() || isFrango() || isPresunto() || isQueijo() )
-        {
-            nome = "burguer";
-        }*/
         if (isBacon())
         {   nome = "Bacon " + nome;
             this.preco+=1;
@@ -102,6 +98,10 @@ public class Burguer extends SugarRecord
         if (this.getPreco()<5.5 && this.getPreco()>4)
         {
             nome = nome + "burguer";
+        }
+        else if( isBacon() && isOvo() && isPresunto() && isQueijo() && isFrango())
+        {
+            nome = ("Galis tudo");
         }
         else if( isBacon() && isOvo() && isPresunto() && isQueijo() )
         {
