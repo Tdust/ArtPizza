@@ -30,20 +30,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this, MontaPizzaActivity.class);
+                Intent intent = new Intent(MainActivity.this, ListaPizzasActivity.class);
                 intent.putExtra("id",0);
                 startActivity(intent);
             }
         });
 
-        Button lista = (Button) findViewById(R.id.button);
-        lista.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(MainActivity.this, ListaPizzaActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }

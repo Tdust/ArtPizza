@@ -54,4 +54,12 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/btCriar"
         android:elevation="0dp" />
+
+    <Button
+        android:text="Salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btCriar"
+        android:layout_alignStart="@+id/btCriar"
+        android:id="@+id/btSalvar" />
 </RelativeLayout>

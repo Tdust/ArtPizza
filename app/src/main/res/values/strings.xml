@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ArtPizza</string>
     <string name="title_activity_lista_burguers">ListaBurguersActivity</string>
+    <string name="title_activity_lista_pizzas">ListaPizzasActivity</string>
 </resources>

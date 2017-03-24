@@ -32,10 +32,13 @@
         <activity android:name=".activity.MontaBurguerActivity" />
         <activity android:name=".activity.BurgoumetActivity" />
         <activity android:name=".activity.MontaPizzaActivity" />
-        <activity android:name=".activity.ListaPizzaActivity" />
         <activity
             android:name=".activity.ListaBurguersActivity"
             android:label="@string/title_activity_lista_burguers"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ListaPizzasActivity"
+            android:label="@string/title_activity_lista_pizzas"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

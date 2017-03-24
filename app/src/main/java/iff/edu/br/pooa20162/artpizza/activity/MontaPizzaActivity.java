@@ -16,7 +16,7 @@ import static java.lang.Float.parseFloat;
 public class MontaPizzaActivity extends AppCompatActivity {
 
     EditText nome, preco;
-    Button btCriar;
+    Button btCriar, btSalvar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,32 @@ public class MontaPizzaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_monta_pizza);
 
         Intent intent = getIntent();
-        int id = (int) intent.getSerializableExtra("id");
+        final int id = (int) intent.getSerializableExtra("id");
+
+
+        btCriar = (Button) findViewById(R.id.btCriar);
+        btSalvar = (Button) findViewById(R.id.btSalvar);
+        btSalvar.setOnClickListener( new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                alterar(id);
+                Intent intent = new Intent(MontaPizzaActivity.this, ListaPizzasActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btCriar.setOnClickListener( new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                salvar();
+                Intent intent = new Intent(MontaPizzaActivity.this, ListaPizzasActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         if (id!=0)
         {
             String nomep = (String) intent.getSerializableExtra("nome");
@@ -33,17 +58,17 @@ public class MontaPizzaActivity extends AppCompatActivity {
             float precop = (float) intent.getSerializableExtra("preco");
             TextView preco = (TextView) findViewById(R.id.etPrecoPizza);
             preco.setText(Float.toString(precop));
+            btCriar.setEnabled(false);
+            btCriar.setClickable(false);
+            btCriar.setVisibility(View.INVISIBLE);
         }
-        btCriar = (Button) findViewById(R.id.btCriar);
-        btCriar.setOnClickListener( new View.OnClickListener(){
+        else
+        {
+            btSalvar.setEnabled(false);
+            btSalvar.setClickable(false);
+            btSalvar.setVisibility(View.INVISIBLE);
+        }
 
-            @Override
-            public void onClick(View view) {
-                salvar();
-                Intent intent = new Intent(MontaPizzaActivity.this, ListaPizzaActivity.class);
-                startActivity(intent);
-            }
-        });
     }
     public void salvar(){
 
@@ -51,6 +76,17 @@ public class MontaPizzaActivity extends AppCompatActivity {
         preco = (EditText) findViewById(R.id.etPrecoPizza);
 
         Pizza pizza = new Pizza(nome.getText().toString(), parseFloat(preco.getText().toString()));
+        pizza.save();
+    }
+    public void alterar(int id)
+    {
+        nome = (EditText) findViewById(R.id.etNomePizza);
+        preco = (EditText) findViewById(R.id.etPrecoPizza);
+
+        Pizza pizza = Pizza.findById(Pizza.class, id);
+
+        pizza.setNome(nome.getText().toString());
+        pizza.setPreco(parseFloat(preco.getText().toString()));
         pizza.save();
     }
 }
