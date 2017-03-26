@@ -2,4 +2,16 @@
     <string name="app_name">ArtPizza</string>
     <string name="title_activity_lista_burguers">ListaBurguersActivity</string>
     <string name="title_activity_lista_pizzas">ListaPizzasActivity</string>
+
+    <string-array name="size_entries">
+        <item>Pequena 6 fatias</item>
+        <item>Média 8 fatias</item>
+        <item>Grande 10 fatias</item>
+    </string-array>
+
+    <string-array name="size_values">
+        <item>26</item>
+        <item>32</item>
+        <item>38</item>
+    </string-array>
 </resources>

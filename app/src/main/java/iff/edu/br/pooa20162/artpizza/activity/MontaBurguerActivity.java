@@ -50,12 +50,15 @@ public class MontaBurguerActivity extends AppCompatActivity {
         txvPreco.setText("R$ "+Float.toString(burg.getPreco())+"0");
     }
 
-
+    int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monta_burguer);
+
+        Intent intent = getIntent();
+        id = (int) intent.getSerializableExtra("id");
 
         final Button bok = (Button)findViewById(R.id.btOK);
         final Button blimpar = (Button)findViewById(R.id.btLimpar);
@@ -125,11 +128,7 @@ public class MontaBurguerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                lanche.setNome("");
-                lanche.setPreco(4);
-                lanche.geraNome();
-                tv.setText(lanche.getNome(), null);
-                txvPreco.setText("R$ "+Float.toString(lanche.getPreco())+"0");
+                alterar(lanche);
             }
         });
         // passando os valores pra outra tela
@@ -146,6 +145,7 @@ public class MontaBurguerActivity extends AppCompatActivity {
                 intent.putExtra("preco", lanche.getPreco());
                 startActivity(intent);
                 salvar(lanche);
+                finish();
             }
         });
 
@@ -190,5 +190,47 @@ public class MontaBurguerActivity extends AppCompatActivity {
         Burguer burg = new Burguer (a.isQueijo(), a.isOvo(), a.isPresunto(), a.isBacon(), a.isFrango());
         burg.geraNome();
         burg.save();
+    }
+    public void alterar(Burguer b)
+    {
+        Burguer burg = Burguer.findById(Burguer.class, id);
+
+        final CheckBox bacon = (CheckBox)findViewById(R.id.cbBaconB);
+        final CheckBox queijo = (CheckBox)findViewById(R.id.cbQueijoB);
+        final CheckBox presunto = (CheckBox)findViewById(R.id.cbPresuntoB);
+        final CheckBox ovo = (CheckBox)findViewById(R.id.cbOvoB);
+        final CheckBox frango = (CheckBox)findViewById(R.id.cbFrangoB);
+
+        if (queijo.isChecked());
+        {
+            if (!burg.isQueijo())
+            {   burg.setQueijo();   }
+        }
+        if (ovo.isChecked());
+        {
+            if (!burg.isOvo())
+            {   burg.setOvo();  }
+        }
+        if (bacon.isChecked());
+        {
+            if (!burg.isBacon())
+            {   burg.setBacon();    }
+        }
+        if (presunto.isChecked());
+        {
+            if(!burg.isPresunto())
+            {   burg.setPresunto(); }
+        }
+        if (frango.isChecked());
+        {
+            if (!burg.isFrango())
+            {   burg.setFrango();   }
+        }
+        burg.geraNome();
+        burg.save();
+    }
+    public void checaValores(Burguer bur, CheckBox a, CheckBox b, CheckBox c, CheckBox d, CheckBox e)
+    {
+
     }
 }

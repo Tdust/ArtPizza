@@ -28,17 +28,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:layout_below="@+id/etNomePizza"
-        android:layout_alignStart="@+id/etNomePizza"
-        android:id="@+id/etPrecoPizza" />
-
     <TextView
-        android:text="Preço"
+        android:text="Tamanho"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etNomePizza"
@@ -52,8 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/btCriar"
-        android:elevation="0dp" />
+        android:id="@+id/btCriar"/>
 
     <Button
         android:text="Salvar"
@@ -62,4 +52,13 @@
         android:layout_alignTop="@+id/btCriar"
         android:layout_alignStart="@+id/btCriar"
         android:id="@+id/btSalvar" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNomePizza"
+        android:layout_toEndOf="@+id/textView2"
+        android:id="@+id/spinTamanho"
+        android:layout_alignBottom="@+id/textView2"
+        android:entries="@array/size_entries"/>
 </RelativeLayout>

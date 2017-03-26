@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import iff.edu.br.pooa20162.artpizza.R;
@@ -15,8 +16,9 @@ import static java.lang.Float.parseFloat;
 
 public class MontaPizzaActivity extends AppCompatActivity {
 
-    EditText nome, preco;
+    EditText nome;
     Button btCriar, btSalvar;
+    String tam, pre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,12 @@ public class MontaPizzaActivity extends AppCompatActivity {
         Intent intent = getIntent();
         final int id = (int) intent.getSerializableExtra("id");
 
+        Spinner spinner = (Spinner) findViewById(R.id.spinTamanho);
+        tam = spinner.getSelectedItem().toString();
+
+        int spinner_pos = spinner.getSelectedItemPosition();
+        String[] size_values = getResources().getStringArray(R.array.size_values);
+        pre = String.valueOf(size_values[spinner_pos]);
 
         btCriar = (Button) findViewById(R.id.btCriar);
         btSalvar = (Button) findViewById(R.id.btSalvar);
@@ -55,9 +63,6 @@ public class MontaPizzaActivity extends AppCompatActivity {
             String nomep = (String) intent.getSerializableExtra("nome");
             TextView nome = (TextView) findViewById(R.id.etNomePizza);
             nome.setText(nomep);
-            float precop = (float) intent.getSerializableExtra("preco");
-            TextView preco = (TextView) findViewById(R.id.etPrecoPizza);
-            preco.setText(Float.toString(precop));
             btCriar.setEnabled(false);
             btCriar.setClickable(false);
             btCriar.setVisibility(View.INVISIBLE);
@@ -73,20 +78,18 @@ public class MontaPizzaActivity extends AppCompatActivity {
     public void salvar(){
 
         nome = (EditText) findViewById(R.id.etNomePizza);
-        preco = (EditText) findViewById(R.id.etPrecoPizza);
 
-        Pizza pizza = new Pizza(nome.getText().toString(), parseFloat(preco.getText().toString()));
+        Pizza pizza = new Pizza(nome.getText().toString(), parseFloat(pre));
         pizza.save();
     }
     public void alterar(int id)
     {
         nome = (EditText) findViewById(R.id.etNomePizza);
-        preco = (EditText) findViewById(R.id.etPrecoPizza);
 
         Pizza pizza = Pizza.findById(Pizza.class, id);
 
         pizza.setNome(nome.getText().toString());
-        pizza.setPreco(parseFloat(preco.getText().toString()));
+        pizza.setPreco(parseFloat(pre));
         pizza.save();
     }
 }
