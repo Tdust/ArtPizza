@@ -1,40 +1,34 @@
 package iff.edu.br.pooa20162.artpizza.model;
 
+import com.orm.SugarRecord;
+
 import iff.edu.br.pooa20162.artpizza.model.Burguer;
 
-public class Bandeja {
-    int cont = 0;
-    transient Burguer bandeja[] = new Burguer[10];
+public class Bandeja extends SugarRecord{
+    Burguer burguer;
+    Pizza pizza;
 
-    public Bandeja()
-    {}
-
-    public Burguer[] getBandeja() {
-        return bandeja;
+    public Bandeja() {
     }
 
-    public void setBandeja(Burguer[] bandeja) {
-        this.bandeja = bandeja;
+    public Bandeja(Pizza pizza, Burguer burguer) {
+        this.pizza = pizza;
+        this.burguer = burguer;
     }
 
-    public void addLanche(Burguer a)
-    {
-        bandeja[cont]=a;
-        cont++;
+    public Burguer getBurguer() {
+        return burguer;
     }
-    //método colado da net pra ver os paranauês
-    public Burguer[] removeLanche(int indice)
-    {
-        for (int i = 0; i < bandeja.length; i++)
-        {
-            if (i == indice)
-            {
-                Burguer[] copy = new Burguer[bandeja.length-1];
-                System.arraycopy(bandeja, 0, copy, 0, i);
-                System.arraycopy(bandeja, i+1, copy, i, bandeja.length-i-1);
-                return copy;
-            }
-        }
-        return bandeja;
+
+    public void setBurguer(Burguer burguer) {
+        this.burguer = burguer;
+    }
+
+    public Pizza getPizza() {
+        return pizza;
+    }
+
+    public void setPizza(Pizza pizza) {
+        this.pizza = pizza;
     }
 }

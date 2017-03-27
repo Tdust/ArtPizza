@@ -14,7 +14,7 @@
             android:value="art.db" />
         <meta-data
             android:name="VERSION"
-            android:value="3" />
+            android:value="4" />
         <meta-data
             android:name="QUERY_LOG"
             android:value="false" />
@@ -39,6 +39,11 @@
         <activity
             android:name=".activity.ListaPizzasActivity"
             android:label="@string/title_activity_lista_pizzas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.BandejaActivity" />
+        <activity
+            android:name=".activity.ListaBandejaActivity"
+            android:label="@string/title_activity_lista_bandeja"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

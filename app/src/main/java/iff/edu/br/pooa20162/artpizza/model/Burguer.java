@@ -1,8 +1,11 @@
 package iff.edu.br.pooa20162.artpizza.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.orm.SugarRecord;
 
-public class Burguer extends SugarRecord
+public class Burguer extends SugarRecord implements Parcelable
 {
 
     String nome = "";
@@ -12,6 +15,28 @@ public class Burguer extends SugarRecord
     boolean presunto=false;
     boolean bacon=false;
     float preco = 4;
+
+    protected Burguer(Parcel in) {
+        nome = in.readString();
+        frango = in.readByte() != 0;
+        queijo = in.readByte() != 0;
+        ovo = in.readByte() != 0;
+        presunto = in.readByte() != 0;
+        bacon = in.readByte() != 0;
+        preco = in.readFloat();
+    }
+
+    public static final Creator<Burguer> CREATOR = new Creator<Burguer>() {
+        @Override
+        public Burguer createFromParcel(Parcel in) {
+            return new Burguer(in);
+        }
+
+        @Override
+        public Burguer[] newArray(int size) {
+            return new Burguer[size];
+        }
+    };
 
     public String getNome()
     {
@@ -125,4 +150,24 @@ public class Burguer extends SugarRecord
     }
 
     public Burguer(){}
+
+    public String toString(){
+        return this.nome;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(nome);
+        dest.writeByte((byte) (frango ? 1 : 0));
+        dest.writeByte((byte) (queijo ? 1 : 0));
+        dest.writeByte((byte) (ovo ? 1 : 0));
+        dest.writeByte((byte) (presunto ? 1 : 0));
+        dest.writeByte((byte) (bacon ? 1 : 0));
+        dest.writeFloat(preco);
+    }
 }

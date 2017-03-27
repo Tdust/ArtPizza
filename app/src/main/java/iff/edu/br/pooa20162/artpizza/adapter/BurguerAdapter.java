@@ -38,7 +38,6 @@ public class BurguerAdapter extends ArrayAdapter<Burguer> {
         TextView nome = (TextView) rowView.findViewById(R.id.bNome);
         TextView preco = (TextView) rowView.findViewById(R.id.bPreco);
 
-
         nome.setText(burgueres.get(position).getNome());
         preco.setText(Float.toString(burgueres.get(position).getPreco()));
 

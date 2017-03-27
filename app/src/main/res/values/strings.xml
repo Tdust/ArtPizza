@@ -14,4 +14,5 @@
         <item>32</item>
         <item>38</item>
     </string-array>
+    <string name="title_activity_lista_bandeja">ListaBandejaActivity</string>
 </resources>

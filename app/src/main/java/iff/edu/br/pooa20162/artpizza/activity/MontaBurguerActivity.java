@@ -65,7 +65,6 @@ public class MontaBurguerActivity extends AppCompatActivity {
         final Button bprox = (Button)findViewById(R.id.btContinuar);
         final TextView tv = (TextView)findViewById(R.id.tvResultado);
         final TextView txvPreco = (TextView)findViewById(R.id.txvPreco);
-        final Bandeja ban = new Bandeja();
 
         final Burguer lanche = new Burguer();
 
@@ -140,8 +139,6 @@ public class MontaBurguerActivity extends AppCompatActivity {
                 Intent intent = new Intent(MontaBurguerActivity.this, ListaBurguersActivity.class);
                 attDados(lanche, tv, txvPreco);
                 intent.putExtra("nome", lanche.getNome());
-                ban.addLanche(lanche);
-                //intent.putExtra ("bandejos", ban.bandeja);
                 intent.putExtra("preco", lanche.getPreco());
                 startActivity(intent);
                 salvar(lanche);

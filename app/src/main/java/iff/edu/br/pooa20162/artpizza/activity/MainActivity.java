@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import iff.edu.br.pooa20162.artpizza.R;
+import iff.edu.br.pooa20162.artpizza.model.Bandeja;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button pedido = (Button) findViewById(R.id.button);
+        pedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, ListaBandejaActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
